@@ -9,7 +9,7 @@ install:
 script:		
   - cd tests		
   - python example_test.py			
-  - sonar-scanner
+  - sonar-scanner -X
 
 #Branches to build		
 branches:		
