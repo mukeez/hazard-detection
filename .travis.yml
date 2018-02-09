@@ -5,6 +5,10 @@ python:
 
 install:
         pip install keras
+        
+script:
+    - pytest
+    
 #Branches to build
 branches:
         - master
