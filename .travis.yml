@@ -5,4 +5,17 @@ python:
 #Command to Install dependencies
 install:
         pip install -r requirements.txt
+#Run Script
+script:
+        sonar-scanner
+addons:
+        sonarcloud:
+                organization: "Mukz95"
+                 token: 
+                        secure: sonar
+
+#Branches to build
+branches:
+        - master
+        - dev
 
