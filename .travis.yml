@@ -9,9 +9,24 @@ install:
 script:		
   - cd tests		
   - python example_test.py			
-  
+  - sonar-scanner
+
 #Branches to build		
 branches:		
      - master		
      - dev		
+     
+dist: trusty
+sudo: required
+
+addons:
+  sonarcloud:
+    organization: "mukz95-github"
+    token:
+      secure: sonar
+jdk:
+  - oraclejdk8
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
 
