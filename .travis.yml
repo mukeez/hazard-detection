@@ -8,14 +8,8 @@ install:
         
 script:
     - cd tests
-    - python example_test.py
-    - sonar-scanner
-    
-addons:
-        sonarcloud:
-                organization: "Mukz95"
-                 token: 
-                        secure: sonar
+    - python example_test.py   
+
 #Branches to build
 branches:
         - master
