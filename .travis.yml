@@ -1,21 +1,32 @@
-language: python 
-python: 
-        - "2.7"
+language: python		
 
-#Command to Install dependencies
-install:
-        pip install -r requirements.txt
-#Run Script
-script:
-        sonar-scanner
+python:		
+   - "2.7"		
+   
+install:		
+      pip install keras		
+        		
+script:		
+  - cd tests		
+  - python example_test.py			
+  - sonar-scanner
+
+#Branches to build		
+branches:		
+     - master		
+     - dev		
+     
+dist: trusty
+sudo: required
+
 addons:
-        sonarcloud:
-                organization: "Mukz95"
-                 token: 
-                        secure: sonar
-
-#Branches to build
-branches:
-        - master
-        - dev
+  sonarcloud:
+    organization: "mukz95-github"
+    token:
+      secure: sonar
+jdk:
+  - oraclejdk8
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
 
