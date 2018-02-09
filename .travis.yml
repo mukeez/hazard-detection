@@ -1,16 +1,8 @@
 language: python
+
 python:
-
   - "2.7"
-
-script:
-        sonar-scanner
-addons:
-        sonarcloud:
-                organization: "Mukz95"
-                 token: 
-                        secure: sonar
-
+  
 #Branches to build
 branches:
         - master
